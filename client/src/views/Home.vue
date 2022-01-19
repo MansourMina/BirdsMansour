@@ -26,7 +26,7 @@
         ></v-text-field
       ></v-col>
     </v-row>
-    <p class="subtitle-1">
+    <p class="subtitle-1 font-italic">
       Click on the <span class="red--text">eye</span> Icon if you have observed
       that bird!
     </p>
