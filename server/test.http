@@ -1,0 +1,3 @@
+PATCH http://127.0.0.1:3000/bird/1
+###
+GET http://127.0.0.1:3000/birds
