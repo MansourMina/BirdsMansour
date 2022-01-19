@@ -50,7 +50,7 @@ export default {
         contentType: 'application/json',
         data: {
           count: item.count + 1,
-          observer: item.observer,
+          name: item.name,
         },
       });
       this.getBirds();

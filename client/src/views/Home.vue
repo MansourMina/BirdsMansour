@@ -13,18 +13,7 @@
             ></v-text-field>
           </v-col>
           <v-col cols="6">
-            <v-sheet
-              class="mx-auto"
-              color="red darken-4 white--text"
-              height="50"
-              width="500"
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              "
-              >Last watched: {{ lastWatched }}</v-sheet
-            >
+            <WatchedBirdname :lastWatched="lastWatched" v-if="lastWatched != null" />
           </v-col>
         </v-row>
       </v-col>
@@ -63,6 +52,7 @@
 </template>
 
 <script>
+import WatchedBirdname from '@/components/WatchedBirdname.vue';
 export default {
   data() {
     return {
@@ -80,13 +70,13 @@ export default {
       ],
       firstName: '',
       lastName: '',
-      lastWatched: '',
+      lastWatched: null,
     };
   },
   methods: {
     updateCount(item) {
       this.lastWatched = item.commonName;
-      item.observer.push(this.firstName + ' ' + this.lastName);
+      item.name = this.firstName + ' ' + this.lastName;
       console.log(item);
       this.$emit('updateCount', item);
     },
@@ -95,6 +85,9 @@ export default {
     birds: {
       type: Array,
     },
+  },
+  components: {
+    WatchedBirdname,
   },
 };
 </script>
