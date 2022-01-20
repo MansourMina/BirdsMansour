@@ -14,7 +14,7 @@
       <v-btn class="ma-3 blue darken-1" to="/about">About </v-btn>
     </v-app-bar>
     <v-main>
-      <v-container 
+      <v-container
         ><router-view
           :birds="birds"
           :gallery="birds.map((e) => e.pic)"
